@@ -10,7 +10,7 @@
             <v-btn text color="blue accent-4"><router-link to="/insights/insightone">Read More-></router-link></v-btn>
           </v-card>
       </v-col>
-      <v-col cols="12" md="6" >
+      <v-col cols="12" md="5" >
         <v-list subheader>
         <h1>Recommend</h1>
         <v-list-item v-for="chat in previous" :key="chat.title">
