@@ -8,7 +8,7 @@
           <h3>{{ item.datePosted }}</h3><br>
             <p class="text-h2 font-weight-bold">{{ item.title }}
             </p><br>
-            <h2 router-link:to="/insights" class="alignleft"><router-link to="/insights" style="text-decoration: none; color: inherit;"><br>
+            <h2 class="alignleft"><router-link to="/insights" style="text-decoration: none; color: inherit;"><br>
                 Learn More->
                 </router-link></h2>
           </v-card-text><br><br><br><br><br><br><br><br>

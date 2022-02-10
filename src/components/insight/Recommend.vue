@@ -18,7 +18,9 @@
             <v-img :alt="`${chat.title} avatar`" :src="chat.featured_image"></v-img>
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title v-text="chat.title" class="mb-4 mt-2"></v-list-item-title>
+            <router-link to="/insightone" style="text-decoration: none; color: inherit;"><br>
+                <v-list-item-title v-text="chat.title" class="mb-4 mt-2"></v-list-item-title>
+              </router-link>
             <v-list-item-subtitle><v-icon>mdi-calendar</v-icon> {{ chat.datePosted }} </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
