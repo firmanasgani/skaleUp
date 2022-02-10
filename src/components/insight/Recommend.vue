@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row no-gutters align="left" justify="center" class="mt-16 mb-16">
-      <v-col cols="12" sm="6" md="6">
+      <v-col cols="12" sm="12" md="6">
         <v-card flat max-width="80%">
             <v-img class="white--text align-center rounded-xl" height="340px" width="660px" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"></v-img>
             <v-card-title>Title Content goes here</v-card-title>
@@ -10,7 +10,7 @@
             <v-btn text color="blue accent-4"><router-link to="/insights/insightone">Read More-></router-link></v-btn>
           </v-card>
       </v-col>
-      <v-col cols="6" md="4">
+      <v-col cols="12" md="6" >
         <v-list subheader>
         <h1>Recommend</h1>
         <v-list-item v-for="chat in previous" :key="chat.title">
