@@ -96,76 +96,76 @@ export default {
     activate: true,
     theme: 1,
     mini: true,
-    iconTemp: '/img/industries.4ce13e3e.png',
+    iconTemp: require('@/assets/detil/industries.png'),
     titleIcon: '',
     services: [
       {
-        avatar: require('/detil/agribisnis.png'),
+        avatar: 'agribisnis.png',
         title: "Agribusiness",
         link: "/industries/agribusiness",
       },
       {
-        avatar: require('/detil/manufaktur.png'),
+        avatar: 'manufaktur.png',
         title: "Manufacture",
         link: "/amrservices",
       },
       {
-        avatar: require('/detil/consumer-product.png'),
+        avatar: 'consumer-product.png',
         title: "Customer Products",
         link: "/amrservices",
       },
       {
-        avatar: require('/detil/finansial.png'),
+        avatar: 'finansial.png',
         title: "Financial Services",
         link: "/mmrservices",
       },
       {
-        avatar: require('/detil/forestry.png'),
+        avatar: 'forestry.png',
         title: 'Forest Product, Paper and Packing',
         link: "/amrservices",
       },
       {
-        avatar: require('/detil/infras.png'),
+        avatar: 'infras.png',
         title: "Infrastructure And Construction",
         link: "/amrservices",
       },
       {
-        avatar: require('/detil/mediaand.png'),
+        avatar: 'mediaand.png',
         title: "Media And Entertainment",
         link: "/mmrservices",
       },
       {
-        avatar: require('/detil/energymining.png'),
+        avatar: 'energymining.png',
         title: "Energy And Mining",
         link: "/amrservices",
       },
       {
-        avatar: require('/detil/retail.png'),
+        avatar: 'sretail.png',
         title: "Retail",
         link: "/amrservices",
       },
       {
-        avatar: require('/detil/techinfo.png'),
+        avatar: 'techinfo.png',
         title: "Technology And Telecomunications",
         link: "/mmrservices",
       },
       {
-        avatar: require('/detil/transport.png'),
+        avatar: 'transport.png',
         title: "Transportation And Logistic",
         link: "/amrservices",
       },
       {
-        avatar: require('/detil/renewable.png'),
+        avatar: 'renewable.png',
         title: "Renewable Energy",
         link: "/amrservices",
       },
       {
-        avatar: require('/detil/chemical.png'),
+        avatar: 'chemical.png',
         title: "Chemical Industry",
         link: "/amrservices",
       },
       {
-        avatar: require('/detil/health.png'),
+        avatar: 'industries.png',
         title: "Health",
         link: "/amrservices",
       },
@@ -176,7 +176,7 @@ export default {
       if(icon == ''  || icon == null || icon == undefined) {
         this.iconTemp = '../assets/detil/industri.png'
       } else {
-        this.iconTemp = icon
+        this.iconTemp = require('../assets/detil/'+icon)
         this.titleIcon = title
       }
       console.log(this.iconTemp)
