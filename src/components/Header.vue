@@ -15,8 +15,8 @@
         <v-list outlined elevation="0">
           <v-row class="mb-0 mt-0">
             <v-col class="mx-auto">
-              <v-img :src="iconTemp" width="225" height="275">
-                <p class="white--text ml-3 mt-3" id="titetax">   </p>
+              <v-img :src="iconTemp" width="225" height="300">
+                <p class="white--text" style="background: rgba(0,0,0,.5); color: white;"> {{ titleIcon }} </p>
               </v-img>
             </v-col>
             <v-col>
@@ -24,7 +24,7 @@
                 <v-col class="column_wrapper" height="275" width="900" outlined color="transparent">
                     <v-list-item v-for="(item, index) in services" :key="index" router :to="item.link">
                       <v-list-item-action>
-                      <v-list-item-title @mousemove="setTitleIcon(item.avatar)" @mouseover="setIconTemp(item.avatar)">{{ item.title }}</v-list-item-title>
+                      <v-list-item-title @mouseout="setTitleIcon(item.title)" @mouseover="setIconTemp(item.avatar, item.title)">{{ item.title }}</v-list-item-title>
                       </v-list-item-action>
                       </v-list-item>
                 </v-col>
@@ -96,7 +96,7 @@ export default {
     activate: true,
     theme: 1,
     mini: true,
-    iconTemp: 'mdi-domain',
+    iconTemp: '/img/industries.4ce13e3e.png',
     titleIcon: '',
     services: [
       {
@@ -172,17 +172,17 @@ export default {
     ],
   }),
   methods: {
-    setIconTemp (icon)  {
+    setIconTemp (icon, title)  {
       if(icon == ''  || icon == null || icon == undefined) {
         this.iconTemp = '../assets/detil/industri.png'
       } else {
         this.iconTemp = icon
+        this.titleIcon = title
       }
+      console.log(this.iconTemp)
     
     },
-    setTitleIcon(title){
-      this.title = title;
-    }
+   
   }
 };
 </script>
