@@ -1,5 +1,5 @@
-<template>
-    <v-container fill-height fluid style="width:1140px" class="mb-16 mt-16">
+<template >
+    <v-container fill-height fluid style="width:1140px" class="mb-16 mt-16" id="ready-to-talk" >
       <v-img class="white--text align-center rounded-xl d-flex" lazy-src="https://picsum.photos/id/11/10/6" height="275px" width="10" :src="require('../assets/banner.jpg')">
       <v-row class="d-flex">
       <v-col cols="12" md="6">

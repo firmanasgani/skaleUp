@@ -3,7 +3,7 @@
     <v-row class="d-flex align-center" align="center" justify="center" no-gutters>
       <v-col>
         <v-card-text>
-          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br />
           <p class="text-h2 text--primary font-weight-bold">Our latest insights</p>
           <p class="lineins"></p>
           <div class="text--primary">
@@ -19,17 +19,16 @@
           <v-row class="d-flex align-center" align="center" justify="center" no-gutters>
         <v-col class="hidden-xs-only">
         <VueSlickCarousel v-bind="settings">
-          <v-col v-for="n in 6" :key="n" cols="12" md="12">
+          <v-col v-for="n in items" :key="n.Id" cols="12" md="12">
             <v-card class="mx-auto elevation-0" rounded="xl">
-              <v-img class="white--text align-end rounded-xl" height="200px" src="https://picsum.photos/id/11/10/6"></v-img>
-              <v-card-subtitle class="pb-0"> Content Tagging</v-card-subtitle>
+              <v-img class="white--text align-end rounded-xl" height="200px" width="400px" :src="n.featured_image"></v-img>
+              <v-card-subtitle class="pb-0"> {{ n.title }}</v-card-subtitle>
               <v-card-title>{{ n.title }}</v-card-title>
               <v-card-text class="text--primary">
-                <div>Whitehaven Beach</div>
-                <div>Whitsunday Island, Whitsunday Islands</div>
+              
               </v-card-text>
               <v-card-actions>
-              <v-btn color="blue"  text> Read More -> </v-btn>
+               <router-link :to="'/insights/insightone/'+n.Id" >Read more-></router-link> 
               </v-card-actions>
             </v-card>
           </v-col>
@@ -43,11 +42,11 @@
               <v-card-subtitle class="pb-0"> Content Tagging</v-card-subtitle>
               <v-card-title>{{ item.title }}</v-card-title>
               <v-card-text class="text--primary">
-                <div>Whitehaven Beach</div>
-                <div>Whitsunday Island, Whitsunday Islands</div>
+                <div>{{ item.caption }}</div>
+                
               </v-card-text>
               <v-card-actions>
-              <v-btn color="blue" text> Read More -> </v-btn>
+              <router-link :to="'/insight/insightone/'+item.Id">Read more-></router-link> 
               </v-card-actions>
             </v-card>
           </v-col>

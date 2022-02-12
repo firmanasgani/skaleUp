@@ -4,6 +4,7 @@
       <v-col class="text-center" cols="12" sm="4" md="12">
         <v-stepper v-model="e1" class="elevation-0">
            <v-col class="d-flex">
+             
             <v-col v-for="(item, i) in headerslogo" :key="i" cols="12" sm="4" v-show="instant">
               <v-card class="d-flex elevation-0" outlined  rounded="xl" style="border: 1px solid #4291f0">
                 <v-col class="d-flex align-center justify-center">
@@ -273,14 +274,8 @@
                 <h1>JEDA</h1><br/><br/>
                 <v-col class="d-flex align-center">
                   <v-container>
-                    <v-btn class="buttonbhhover white--text" color="#4291F0" @click="e1 = 210" width="201" height="137" rounded="xl" outlined style="border-color: #4291f0">
-                      <v-card-text>
-                      <div><h1 class="black--text">5</h1></div><br />
-                      <div>
-                        <h5 class="black--text">Sangat di atas ekspektasi</h5>
-                      </div>
-                      </v-card-text>
-                    </v-btn>
+                    <v-btn color="#4291F0" @click="e1 = 210" style="width:350px; height: 52px" class="white--text ml-0 mr-0">Ok, lanjut</v-btn>
+                     
                   </v-container>
                 </v-col><br/>
                 <v-col><br/><br/><br/><br/><br><br/><br/><br/><br/><br>
@@ -421,14 +416,8 @@
                 <h1>JEDA</h1><br/><br/>
                 <v-col class="d-flex align-center">
                   <v-container>
-                    <v-btn class="buttonbhhover white--text" color="#4291F0" @click="e1 = 216" width="201" height="137" rounded="xl" outlined style="border-color: #4291f0">
-                      <v-card-text>
-                      <div><h1 class="black--text">5</h1></div><br />
-                      <div>
-                        <h5 class="black--text">Sangat di atas ekspektasi</h5>
-                      </div>
-                      </v-card-text>
-                    </v-btn>
+                   <v-btn color="#4291F0" @click="e1 = 216"  style="width:350px; height: 52px" class="white--text ml-0 mr-0">Ok, lanjut</v-btn>
+                     
                   </v-container>
                 </v-col><br/>
                 <v-col><br/><br/><br/><br/><br><br/><br/><br/><br/><br>

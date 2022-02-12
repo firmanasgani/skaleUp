@@ -8,9 +8,10 @@
             <div class="white--text">
               Mendisrupsi bisnis anda untuk meningkatkan produktivitas<br> operasional dan kinerja team. Get ready for scalling up your <br>business further.
             </div><br><br><br><br><br>
-            <v-btn v-for="icon in icons" :key="icon" class="mx-4" dark icon>
+            <v-btn v-for="icon in icons" :key="icon" class="mx-4" :href="icon.url" target="_blank" dark icon>
               <v-icon size="24px">
-                {{ icon }}
+                {{ icon.icons }}
+              
               </v-icon>
             </v-btn>
           </v-card-text><br><br><br>
@@ -32,11 +33,23 @@
 <script>
 export default {
   data: () => ({
-    icons: [
-      "mdi-facebook",
-      "mdi-linkedin",
-      "mdi-instagram",
-      "mdi-youtube",
+    icons:  [
+      {
+        icons: 'mdi-linkedin',
+        url: 'https://www.linkedin.com/company/skale-up-business/'
+      },{
+        icons: 'mdi-instagram',
+        url: 'https://www.instagram.com/skaleupwith.us/'
+      },{
+        icons: 'mdi-facebook',
+        url: 'https://www.facebook.com/skaleup/'
+      },{
+        icons: 'mdi-whatsapp',
+        url: 'https://wa.me/6281333338630'
+      },{
+        icons: 'mdi-youtube',
+        url: 'https://www.youtube.com/channel/UCMRmAlX0XT3ca9YgJQNK-Yw'
+      }
     ],
   }),
 };

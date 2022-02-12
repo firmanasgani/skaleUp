@@ -1,18 +1,19 @@
 <template>
-  <v-app>
+<v-app>
     <v-app-bar color="white" app flat height="100" elevation="1">
     <Header/>
     </v-app-bar>
     <v-slide-x-transition>
       <v-main>
-          <Background/>
-            <Content/>
-            <Team/>
-            <Banner/>
+         <Background />
+      <Content/>
+      <Team/>
       </v-main>
     </v-slide-x-transition>
+    <Banner/>
     <Footer/>
   </v-app>
+  
 </template>
 
 <script>

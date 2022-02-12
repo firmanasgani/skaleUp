@@ -7,7 +7,7 @@
             <v-img class="white--text align-center rounded-xl" height="400px" width="1600px" :src="require('../assets/help.png')">
               <p class="text-h3 white--text font-weight-bold ml-16">What can we help<br> you achieve?</p>
               <p class="linec ml-16"></p><br>
-              <p class="text-h5 white--text ml-16">Let’s get to work -></p>
+              <router-link to="/howwehelp/#ready-to-talk" class="text-h5 white--text ml-16" style="text-decoration:none;">Let’s get to work -></router-link>
             </v-img>
           </v-card>
         </v-col>

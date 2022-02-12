@@ -12,7 +12,7 @@
         <p class="text-h3 white--text font-weight-bold">Find Your Passion</p>
         <p class="linec"></p>
         <p class="text-h5 white--text">Find your dream job with full of <br>passion and compassionate</p>
-        <p class="text-h6 white--text">Start Here -></p>
+        <router-link  to="/careers" class="text-h6 white--text" >Start Here -></router-link>
         </v-card-text>
         </v-img>
       </v-card>

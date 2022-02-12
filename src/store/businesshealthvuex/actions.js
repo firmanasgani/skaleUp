@@ -32,7 +32,18 @@ export default {
 
       console.log('ini response', response);
       commit('setscore', response.score); 
+      var no_hp = item.phone;
+      var format = '62';
+      var hilang_satu_angka = no_hp.substring(1);
+      var no_hp_baru = format + hilang_satu_angka;
+     
+      location.href = 'https://wa.me/' + no_hp_baru + '?text=Halo%20' + item.name + '%20Sekarang%20kami%20mendapatkan%20hasil%20analisa%20anda%20dengan%20skor%20' + response.score;
+      
+
+      
       // alert(' https://api.whatsapp.com/send?phone=6281380399188&text=Saya%20tertarik%20untuk%20membeli%20produk%20ini%20segera.');
+
+
       return response.score;
     } catch(e) {
       console.log(e)

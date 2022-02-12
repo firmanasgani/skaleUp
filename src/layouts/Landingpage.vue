@@ -25,6 +25,7 @@ import Cardbusinesshealth from '../components/Cardbusinesshealth';
 import Carousels from '../components/Carousels';
 import Header from '../components/Header';
 
+document.title = 'SkaleUp Business';
 export default {
   name: 'App',
 

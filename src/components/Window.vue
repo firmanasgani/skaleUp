@@ -83,6 +83,14 @@ export default {
   data: () => ({
     reveal: false,
     alignments: ["center"],
+    items: [
+      {
+        title: 'agribisnis',
+        content:'Agrikultur telah ada dan berkembang sejak awal kehidupan bermasyarakat terbentuk. Hal ini pula yang mendorong bisnis dalam bidang pertanian menjadi tidak lekang oleh waktu. Dengan semakin berkembangnya teknologi di era disruptif ini, agribisnis juga harus mengikuti transformasi tersebut agar tetap relevan dengan kebutuhan pasar dan keberlangsungan perusahaan. Kami didukung oleh mitra yang terpercaya dalam bidang ini mampu membantu perusahaan agribisnis anda untuk berkembang dan berinovasi menggunakan teknologi yang dapat diaplikasikan secara langsung di lapangan. Tim agrikultur kami berpengalaman mulai dari pemilihan bibit yang sesuai dengan kondisi lapangan, penerapan metode pembiakkan hingga metode meningkatkan pertumbuhan panen yang konsisten. ',
+          
+
+      }
+    ],
     settings: {
           "dots": true,
           "infinite": true,

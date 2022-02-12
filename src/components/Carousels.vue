@@ -5,35 +5,35 @@
         <v-row class="d-flex align-center mb-0 white--text" align="center" justify="center" no-gutters style="height: 800px">
           <v-col>
           <v-card-text>
-          <h3>{{ item.datePosted }}</h3><br>
-            <p class="text-h2 font-weight-bold">{{ item.title }}
+          <h3 style="-webkit-text-stroke: 1px black; width: 6rem">{{ item.datePosted }}</h3><br>
+            <p class="text-h2 font-weight-bold" style="-webkit-text-stroke: 3px black; width:fit-content">{{ item.title }}
             </p><br>
-            <h2 class="alignleft"><router-link to="/insights" style="text-decoration: none; color: inherit;"><br>
+            <h2 class="alignleft"><router-link :to="'/insights/insightone/'+item.Id" style="text-decoration: none; color: inherit;-webkit-text-stroke: 1px black; width:20px"><br>
                 Learn More->
                 </router-link></h2>
           </v-card-text><br><br><br><br><br><br><br><br>
           <v-container class="hidden-xs-only">
             <v-col class="d-flex align-center">
               <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 0">
-                <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit;"><br>
+                <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; -webkit-text-stroke: 0.70px black;"><br>
                 {{ itemSatu }}<br><br><br>
                 </router-link><br>
                 <v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
               </v-card>
               <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 1">
-                <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit;"><br>
+                <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; -webkit-text-stroke: 0.70px black;"><br>
                 {{ itemDua }}<br><br><br>
                 </router-link><br>
                 <v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
               </v-card>
               <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 2">
-                <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit;"><br>
+                <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; -webkit-text-stroke: 0.70px black;"><br>
                 {{ itemTiga }}<br><br><br>
                 </router-link><br>
                 <v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
               </v-card>
               <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 3">
-                <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit;"><br>
+                <router-link to="" class="white--text body-2" style=" text-decoration: none; color: inherit;-webkit-text-stroke: 0.70px black;"><br>
                 {{ itemEmpat }}<br><br><br>
                 </router-link><br>
                 <v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
@@ -44,7 +44,7 @@
             <v-col class="d-flex align-center">
               <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 0">
                 <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit;"><br>
-                JUDUL ARTIKEL<br><br><br>
+                {{ item.title }}<br><br><br>
                 </router-link><br>
                 <v-progress-linear class="hidden-sm-and-up" v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
               </v-card>

@@ -85,7 +85,7 @@ export default [
         name: 'insight'
     },
     {
-        path: '/Insights/insightone',
+        path: '/insights/insightone/:id',
         component:Insightone,
         name: 'insightone'
     },

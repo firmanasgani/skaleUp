@@ -3,13 +3,11 @@
     <v-app-bar color="white" app flat height="100" elevation="1">
     <Header/>
     </v-app-bar>
-    <v-slide-x-transition>
       <v-main>
         <Background/>
         <Content/>
-      </v-main>
-    </v-slide-x-transition>
-    <Footer/>
+      </v-main> 
+      <Footer/>
   </v-app>
 </template>
 

@@ -16,7 +16,7 @@
           <v-row class="mb-0 mt-0">
             <v-col class="mx-auto">
               <v-img :src="iconTemp" width="225" height="275">
-                <p class="white--text ml-3 mt-3">Agribusiness</p>
+                <p class="white--text ml-3 mt-3" id="titetax">   </p>
               </v-img>
             </v-col>
             <v-col>
@@ -24,7 +24,7 @@
                 <v-col class="column_wrapper" height="275" width="900" outlined color="transparent">
                     <v-list-item v-for="(item, index) in services" :key="index" router :to="item.link">
                       <v-list-item-action>
-                      <v-list-item-title @mouseover="setIconTemp(item.avatar)">{{ item.title }}</v-list-item-title>
+                      <v-list-item-title @mousemove="setTitleIcon(item.avatar)" @mouseover="setIconTemp(item.avatar)">{{ item.title }}</v-list-item-title>
                       </v-list-item-action>
                       </v-list-item>
                 </v-col>
@@ -97,64 +97,75 @@ export default {
     theme: 1,
     mini: true,
     iconTemp: 'mdi-domain',
+    titleIcon: '',
     services: [
       {
-        avatar: require('../assets/carousell/satu.jpg'),
+        avatar: require('../assets/detil/agribisnis.png'),
         title: "Agribusiness",
         link: "/industries/agribusiness",
       },
       {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+        avatar: require('../assets/detil/manufaktur.png'),
         title: "Manufacture",
         link: "/amrservices",
       },
       {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+        avatar: require('../assets/detil/consumer-product.png'),
         title: "Customer Products",
         link: "/amrservices",
       },
       {
-        avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+        avatar: require('../assets/detil/finansial.png'),
         title: "Financial Services",
         link: "/mmrservices",
       },
       {
-        title: "Forest Product, Paper And Packing",
+        avatar: require('../assets/detil/finansial.png'),
+        title: 'Forest Product, Paper and Packing',
         link: "/amrservices",
       },
       {
+        avatar: require('../assets/detil/infras.png'),
         title: "Infrastructure And Construction",
         link: "/amrservices",
       },
       {
+        avatar: require('../assets/detil/mediaand.png'),
         title: "Media And Entertainment",
         link: "/mmrservices",
       },
       {
+        avatar: require('../assets/detil/energymining.png'),
         title: "Energy And Mining",
         link: "/amrservices",
       },
       {
+        avatar: require('../assets/detil/retail.png'),
         title: "Retail",
         link: "/amrservices",
       },
       {
+        avatar: require('../assets/detil/techinfo.png'),
         title: "Technology And Telecomunications",
         link: "/mmrservices",
       },
       {
+        avatar: require('../assets/detil/transport.png'),
         title: "Transportation And Logistic",
         link: "/amrservices",
       },
       {
+        avatar: require('../assets/detil/renewable.png'),
         title: "Renewable Energy",
         link: "/amrservices",
       },
       {
+        avatar: require('../assets/detil/chemical.png'),
         title: "Chemical Industry",
         link: "/amrservices",
       },
       {
+        avatar: require('../assets/detil/health.png'),
         title: "Health",
         link: "/amrservices",
       },
@@ -162,7 +173,15 @@ export default {
   }),
   methods: {
     setIconTemp (icon)  {
-      this.iconTemp = icon;
+      if(icon == ''  || icon == null || icon == undefined) {
+        this.iconTemp = '../assets/detil/industri.png'
+      } else {
+        this.iconTemp = icon
+      }
+    
+    },
+    setTitleIcon(title){
+      this.title = title;
     }
   }
 };
