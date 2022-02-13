@@ -17,11 +17,20 @@
         </v-col>
 
         <v-data-table
-    :headers="tittles"
-    :items="itemitem"
-    :items-per-page="5"
-    class="elevation-1"
-    :search="search">
+          :headers="tittles"
+          :items="itemitem"      
+          :items-per-page="5"
+          class="elevation-1"
+          :search="search">
+          <template #item.judul ="{ value }">
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>
+                  <router-link to="/Careers/careersatu">{{ value }}</router-link>
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </template> 
     </v-data-table>
 
       </v-col>
@@ -36,7 +45,7 @@
         search: '',
         tittles: [
           {
-            text: 'TITTLE',
+            text: 'Title',
             align: 'start',
             sortable: false,
             value: 'judul',

@@ -33,7 +33,7 @@
                                     <h4 class="display-1">{{ h4 }}</h4><br><br><br>
                                 
                                     <router-link to="/businesshealth/finalresulttwo">
-                                        <v-btn color="#4291F0" width="400" height="60" class="elevation-3 white--text">Scale up bisnis saya sekarang</v-btn>
+                                        <v-btn color="#4291F0" width="400" height="60" class="elevation-3 white--text" to="/businesshealth/formresult" > {{button }}</v-btn>
                                     </router-link>
                                 </v-card>
                             </v-col>
@@ -59,6 +59,7 @@ export default {
 
   data(){
       return{
+          button: '',
           total: this.$route.params.id,
           lazysrc: '',
             src: '',
@@ -77,6 +78,7 @@ mounted() {
        this.h2 = 'Great! Your Business is Ready for Scalling UP!';
         this.style= 'color: #4291F0; font-size: 72px;';
         this.color = '#BFDCFF';
+        this.button = 'Scale up bisnis sekarang'
        this.h4 = 'Bisnis anda memiliki kondisi kesehatan yang sangat bagus saat ini dan beberapa tahun mendatang.   Ini saat yang tepat Anda mempertimbangkan strategi peluang pertumbuhan bisnis untuk meningkatkan kesuksesan jangka panjang.';
    }else if(Number(this.total) >= 20 && Number(this.total) <= 40){
        this.lazysrc =  "https://picsum.photos/id/11/10/6";
@@ -84,6 +86,7 @@ mounted() {
        this.score = Number(this.total);
        this.h2 = 'You’re doing good, but...';
        this.color = '#CDFCD3';
+       this.button = 'Cari penyebab masalah Sekarang'
         this.style= 'color: #39A748; font-size: 72px;';
        this.h4 = 'Saat ini bisnis anda menghadapi beberapa kondisi yang menghambat performanya. Hambatan ini dapat berasal dari faktor internal, seperti cash flow yang bermasalah atau performa karyawan yang menurun, maupun factor eksternal. Anda tidak tidak perlu khawatir harus memecahkan masalah-masalah tersebut sendiri. Sebaiknya segera hubungi konsultan manajemen bisnis untuk mencari tahu akar permasalahan dan menyelesaikannya.';
     }else if(Number(this.total) < 20){
@@ -93,6 +96,7 @@ mounted() {
        this.h2 = 'Oh no.. there’s a bottleneck';
        this.color = '#FFDBDC';
         this.style= 'color: #ED1C24; font-size: 72px;';
+        this.button = 'keluar dari zona merah Sekarang'
        this.h4 = 'zona merah dimana perlu dilakukan peninjauan secara menyeluruh baik dari business flow process hingga struktur organisasi. Opsi yang dapat dipertimbangakan berdasarkan hasil peninjauan tersebut dapat berupa restrukturisasi, kemungkinan pennjulan atau divestasi dan lainnya. Anda tidak tidak perlu khawatir harus memecahkan masalah-masalah tersebut sendiri.Sebaiknya segera hubungi konsultan manajemen bisnis untuk mencari tahu akar permasalahan dan menyelesaikannya.';
     }
 }

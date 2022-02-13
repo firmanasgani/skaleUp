@@ -14,8 +14,7 @@
             <p class="line"></p>
             
             <div class="text--primary">
-              relating to or dependent on charity; charitable.<br />
-              "an eleemosynary educational institution."
+              We help you in leveraging your business performance through these 7 services
             </div>
           
           </v-card-text>
@@ -71,7 +70,7 @@ export default {
         {
             link: 'technology-based-solution',
             judul: 'Technology Based Solution',
-            rincian: '. Penggunaan teknologi dalam pengolahan data, informasi dan automatisasi dalam kegiatan berbisnis menjadi inti dari perubahan ini. ',
+            rincian: 'Penggunaan teknologi dalam pengolahan data, informasi dan automatisasi dalam kegiatan berbisnis menjadi inti dari perubahan ini. ',
         },
         {
             link: 'marketing-solution',

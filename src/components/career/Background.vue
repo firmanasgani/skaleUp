@@ -7,9 +7,7 @@
             <v-card-title>
                 <h1>Careers</h1>
             </v-card-title>
-            <v-card-text class="text-left">
-                <p>Egestas urna facilisi</p>
-            </v-card-text>
+          
             </v-container>
             </v-img>
           </v-card>

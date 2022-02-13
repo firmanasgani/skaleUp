@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    
     <v-row justify="center" align="center" class="mt-16 mb-16">
       <v-col cols="12" md="4" sm="8">
         <v-card class="mx-auto" outlined color="transparent">
@@ -8,10 +9,12 @@
               Bold steps forwards.
             </p>
             <p class="line"></p>
+    
             <div class=" text-h5">
               How we disrupt their business in <br>performance leveraging
             </div>
           </v-card-text>
+    
           <v-card-actions>
             <v-btn text color="blue accent-4" @click="reveal = true">
               See all clients result ->
@@ -19,8 +22,19 @@
           </v-card-actions>
         </v-card>
       </v-col>
+
       <v-col cols="12" md="8" sm="8" class="hidden-xs-only">
-        <VueSlickCarousel v-bind="settings">
+    
+        <VueSlickCarousel v-bind="settigns">
+          <v-col v-for="(item, i) in items" :key="i" >
+            <v-card class="pa-md-10 mx-lg-auto overflow-hidden" rounded="xl">
+              <v-img :src="item.images" height="400px" class="mx-auto" ></v-img>
+            
+              
+            </v-card>
+          </v-col>
+        </VueSlickCarousel>
+        <!-- <VueSlickCarousel v-bind="settings">
           <v-col v-for="n in 6" :key="n">
             <v-card class="pa-md-10 mx-lg-auto overflow-hidden" rounded="xl">
               <v-card-subtitle class="font-weight-bold"> Number 10</v-card-subtitle>
@@ -42,10 +56,19 @@
               </v-card-actions>
             </v-card>
           </v-col>
-        </VueSlickCarousel>
+        </VueSlickCarousel> -->
       </v-col>
       <v-col cols="12" md="8" sm="8" class="hidden-sm-and-up">
-        <VueSlickCarousel v-bind="settingss">
+        <VueSlickCarousel v-bind="settigns">
+          <v-col v-for="(item, i) in items" :key="i" >
+            <v-card class="pa-md-10 mx-lg-auto overflow-hidden" rounded="xl">
+              <v-img :src="item.images" style="width:min-content; height:min-content" class="mx-auto" ></v-img>
+            
+              
+            </v-card>
+          </v-col>
+        </VueSlickCarousel>
+        <!-- <VueSlickCarousel v-bind="settingss">
           <v-col v-for="n in 6" :key="n">
             <v-card class="pa-md-10 mx-lg-auto overflow-hidden" rounded="xl">
               <v-card-subtitle class="font-weight-bold"> Number 10</v-card-subtitle>
@@ -67,7 +90,7 @@
               </v-card-actions>
             </v-card>
           </v-col>
-        </VueSlickCarousel>
+        </VueSlickCarousel> -->
       </v-col>
     </v-row>
   </v-container>
@@ -85,10 +108,11 @@ export default {
     alignments: ["center"],
     items: [
       {
-        title: 'agribisnis',
-        content:'Agrikultur telah ada dan berkembang sejak awal kehidupan bermasyarakat terbentuk. Hal ini pula yang mendorong bisnis dalam bidang pertanian menjadi tidak lekang oleh waktu. Dengan semakin berkembangnya teknologi di era disruptif ini, agribisnis juga harus mengikuti transformasi tersebut agar tetap relevan dengan kebutuhan pasar dan keberlangsungan perusahaan. Kami didukung oleh mitra yang terpercaya dalam bidang ini mampu membantu perusahaan agribisnis anda untuk berkembang dan berinovasi menggunakan teknologi yang dapat diaplikasikan secara langsung di lapangan. Tim agrikultur kami berpengalaman mulai dari pemilihan bibit yang sesuai dengan kondisi lapangan, penerapan metode pembiakkan hingga metode meningkatkan pertumbuhan panen yang konsisten. ',
-          
-
+        images: require('@/assets/partner/swasembada.png'),
+      },{
+        images: require('@/assets/partner/clove.png'),
+      },{
+        images: require('@/assets/partner/elektron.jpeg'),
       }
     ],
     settings: {
