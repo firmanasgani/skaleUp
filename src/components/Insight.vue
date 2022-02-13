@@ -20,10 +20,14 @@
         <v-col class="hidden-xs-only">
         <VueSlickCarousel v-bind="settings">
           <v-col v-for="n in items" :key="n.Id" cols="12" md="12">
-            <v-card class="mx-auto elevation-0" rounded="xl">
+            <v-card class="mx-auto elevation-0" rounded="xl" width="350px" height="400px">
               <v-img class="white--text align-end rounded-xl" height="200px" width="400px" :src="n.featured_image"></v-img>
-              <v-card-subtitle class="pb-0"> {{ n.title }}</v-card-subtitle>
-              <v-card-title>{{ n.title }}</v-card-title>
+              <v-card class="mx-auto elevation-0" height="55px"> 
+                <v-card-subtitle class="pb-0"> {{ n.title }}</v-card-subtitle>
+              </v-card>
+              <v-card class="mx-auto elevation-0" height="64px">
+                <v-card-title>{{ n.title }}</v-card-title>
+              </v-card>
               <v-card-text class="text--primary">
               
               </v-card-text>
