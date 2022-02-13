@@ -15,6 +15,7 @@ import Insightone from './components/insight/Insightone';
 import Careers from './layouts/Careers';
 import Careersatu from './components/career/Careersatu';
 import Applycareersatu from './components/career/Applycareersatu';
+import businessresultVue from './components/businesshealth/businessresult.vue';
 
 export default [
     {
@@ -60,7 +61,12 @@ export default [
         name: 'finalresultthree'
     },
     {
-        path: '/Industries/agribusiness',
+        path: '/businesshealth/businessresult/:id',
+        component:businessresultVue,
+        name: 'businessresult'
+    },
+    {
+        path: '/industries/:industri',
         component:Industriesagribusiness,
         name: 'industriesagribusiness'
     },
@@ -70,7 +76,7 @@ export default [
         name: 'howwehelp'
     },
     {
-        path: '/Howwehelpsatu',
+        path: '/Howwehelpsatu/:help',
         component:Howwehelpsatu,
         name: 'howwehelpsatu'
     },

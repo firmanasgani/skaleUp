@@ -32,8 +32,8 @@ export default {
 
       console.log('ini response', response);
       console.log('scorenya adalah : '+ response.data.score);
-      commit('setscore', response.score); 
-      return response.score;
+      commit('response', response.data.score); 
+      return response.data.score;
     } catch(e) {
       console.log(e)
     }

@@ -3,8 +3,11 @@
     <v-row align="center" justify="center" no-gutters style="height: 100%">
       <v-col class="text-center" cols="12" sm="4" md="12">
         <v-stepper v-model="e1" class="elevation-0">
+
            <v-col class="d-flex">
-             
+            
+            <!-- stage 1, stage 2, stage 3 versi mobile  -->
+            
             <v-col v-for="(item, i) in headerslogo" :key="i" cols="12" sm="4" v-show="instant">
               <v-card class="d-flex elevation-0" outlined  rounded="xl" style="border: 1px solid #4291f0">
                 <v-col class="d-flex align-center justify-center">
@@ -14,14 +17,17 @@
                   </v-col>
                   </v-card>
                   <v-col>
-                  <h4 class="blue--text">{{item.stage}} </h4>
-                  <p>{{item.tentang}}</p>
+                   <h4 class="blue--text">{{item.stage}}</h4>
+                  <p>{{item.stage}}</p>  
                   </v-col>
                 </v-col>
                 <v-stepper-step :complete="e1 > 1" step="0"> </v-stepper-step>
               </v-card>
             </v-col>
+
           </v-col>
+          
+          <!-- stage 1, stage 2, stage 3 versi mobile -->
           <v-stepper-header class="elevation-0" v-show="seen">
             <v-col v-for="(item, i) in headerslogo" :key="i" cols="12" sm="4">
               <v-card class="d-flex elevation-0" outlined  rounded="xl" style="border: 1px solid #4291f0">
@@ -42,64 +48,83 @@
           </v-stepper-header>
           
           <v-form @submit.prevent="saved">
-          <v-stepper-items class="fill-height white--text align-center pa-md-16 mx-lg-16" align="center" justify="center" style="height: 100%">
-            <v-stepper-content step="1">
-              <v-card>
-                <h1>Tuliskan Nama Anda</h1><br/>
-                <h2>Biar akrab, Kami sangat senang berkenalan terlebih dahulu</h2><br/><br/>
-                <v-text-field :rules="nameRules" v-model="form.name" label="Nama Lengkap Anda" solo :value="this.setname(form.name)"></v-text-field><br/>
-                <v-btn :disabled="!form.name" color="#4291F0" @click="e1 = 2; mounted()" width="165" height="60" class="white--text">
-                <h4>Lanjut</h4></v-btn>
-              </v-card>
-            </v-stepper-content>
+            
 
-            <v-stepper-content step="2">
-              <v-card class="elevation-0" style="height: 100%" v-show="hiden">
-                <p class="primary--text display-3 font-weight-bold">Halo {{form.name}}</p><br />
-                <p class="display-1 font-weight-bold">Senang berkenalan dengan anda</p><br/><br/>
-              </v-card>
-              <v-card class="elevation-0" style="height: 100%" v-show="seen">
-                <h1>Selanjutnya, Kami Ingin mengetahui background bisnis yang Anda jalankan.</h1><br />
-                <h3>Berapa lama bisnis Anda sudah berjalan?</h3><br/><br/>
-                <v-container fluid>
-                  <v-row align="center" justify="center">
-                    <v-radio-group v-model="form.year_of_business" :value="this.setyear_of_business(form.year_of_business)">
-                      <v-radio name="form.year_of_business" label="1 Tahun" :value="satutahun" @click="e1 = 21"></v-radio>
-                      <v-radio name="form.year_of_business" label="2-5 Tahun" :value="duatahun" @click="e1 = 21"></v-radio>                
-                      <v-radio name="form.year_of_business" label=">5 Tahun" :value="limatahun" @click="e1 = 21"></v-radio>                
-                    </v-radio-group>
+            <!-- Form nama -->
+            <v-stepper-items class="fill-height white--text align-center pa-md-16 mx-lg-16" align="center"  justify="center" style="height: 100%">
+              <v-stepper-content step="1">
+                <v-card>
+                  <h1>Tuliskan Nama Anda</h1><br/>
+                  <h2>Biar akrab, Kami sangat senang berkenalan terlebih dahulu</h2><br/><br/>
+                  <v-text-field :rules="nameRules" v-model="form.name" label="Nama Lengkap Anda" solo :value="this.setname(form.name)"></v-text-field><br/>
+                  <v-btn :disabled="!form.name" color="#4291F0" @click="e1 = 2; mounted()" width="165" height="60" class="white--text">
+                  <h4>Lanjut</h4></v-btn>
+                </v-card>
+              </v-stepper-content>
+
+              <v-stepper-content step="2">
+                <v-card class="elevation-0" style="height: 100%" v-show="hiden">
+                  <p class="primary--text display-3 font-weight-bold">Halo {{form.name}}</p><br />
+                  <p class="display-1 font-weight-bold">Senang berkenalan dengan anda</p><br/><br/>
+                </v-card>
+                <v-card class="elevation-0" style="height: 100%" v-show="seen">
+                  <h1>Selanjutnya, Kami Ingin mengetahui background bisnis yang Anda jalankan.</h1><br />
+                  <h3>Berapa lama bisnis Anda sudah berjalan?</h3><br/><br/>
+                  <v-container fluid>
+                    <v-row align="center" justify="center">
+                      <v-radio-group v-model="form.year_of_business" :value="this.setyear_of_business(form.year_of_business)">
+                        <v-radio name="form.year_of_business" label="1 Tahun" :value="satutahun" @click="e1 = 21"></v-radio>
+                        <v-radio name="form.year_of_business" label="2-5 Tahun" :value="duatahun" @click="e1 = 21"></v-radio>                
+                        <v-radio name="form.year_of_business" label=">5 Tahun" :value="limatahun" @click="e1 = 21"></v-radio>                
+                       </v-radio-group>
+                     </v-row>
+                   </v-container>
+                </v-card>
+              
+                <v-col><br/><br/><br/><br/><br><br/><br/><br/><br/><br>
+                  <v-row align="center" justify="left" v-show="seen">
+                    <p @click="e1 = 1" class="black--text"><v-icon>mdi-arrow-left</v-icon>Sebelumnya</p>
                   </v-row>
-                </v-container>
-              </v-card>
-              <v-col><br/><br/><br/><br/><br><br/><br/><br/><br/><br>
-                <v-row align="center" justify="left" v-show="seen">
-                  <p @click="e1 = 1" class="black--text"><v-icon>mdi-arrow-left</v-icon>Sebelumnya</p>
-              </v-row>
-              </v-col>
-            </v-stepper-content>
+                </v-col>
+              </v-stepper-content>
 
             <v-stepper-content step="21">
+              <!-- Bidang bisnis -->
               <v-card class="elevation-0" style="height: 100%">
                 <h1>Bisnis anda bergerak di bidang?</h1><br/>
+                
                 <v-col class="d-flex" cols="12" sm="6">
                 <!-- <v-select :items="business_industriesslist" label="Pilih bisnis di bidang anda" v-model="form.business_industriess" outlined> </v-select>  -->
-                <v-col align="center" justify="left" class="align-center justify-center">
-                <v-combobox v-model="form.business_industriess" :items="business_industriesslist" label="Pilih bisnis di bidang anda" outlined :value="this.setbusiness_industriess(form.business_industriess)" @change="lainnyaaa" v-show="hidenlainnya"></v-combobox><br>
-                <v-text-field v-model="form.business_industriess" label="Tuliskan jenis bidang bisnis anda" outlined :value="this.setbusiness_industriess(form.business_industriess)" v-show="lainnya"></v-text-field>
-                </v-col>
+                  <v-col align="center" justify="left" class="align-center justify-center">
+                    <v-combobox v-model="form.business_industriess" :items="business_industriesslist" label="Pilih bisnis di bidang anda" outlined :value="this.setbusiness_industriess(form.business_industriess)" @change="lainnyaaa" v-show="hidenlainnya">
+                      
+                    </v-combobox><br>
+                    <v-text-field v-model="form.business_industriess" label="Tuliskan jenis bidang bisnis anda" outlined :value="this.setbusiness_industriess(form.business_industriess)" v-show="lainnya">
+
+                    </v-text-field>
+                  </v-col>
                 </v-col><br />
-                <v-btn color="#4291F0" @click="e1 = 22" :disabled="!form.business_industriess" width="165" height="60" class="white--text" ><h4>Lanjut</h4></v-btn>
+                
+                <v-btn color="#4291F0" @click="e1 = 22" :disabled="!form.business_industriess" width="165" height="60" class="white--text" >
+                  <h4>Lanjut</h4>
+                </v-btn>
               </v-card>
               <v-col><br/><br/><br/><br/><br><br/><br/><br/><br/><br>
+
                 <v-row align="center" justify="left">
                   <p @click="e1 = 2" class="black--text"><v-icon>mdi-arrow-left</v-icon>Sebelumnya</p>
                 </v-row>
               </v-col>
+
             </v-stepper-content>
 
+
+            <!-- pemilik bisnis -->
             <v-stepper-content step="22">
+
               <v-card class="elevation-0" style="height: 100%">
                 <h1>Apakah bisnis ini dijalankan oleh Anda sendiri atau berpartner dengan orang lain?</h1><br /><br />
+
                 <v-container fluid>
                   <v-row align="center" justify="center">
                   <v-radio-group v-model="form.is_owner" :value="this.setis_owner(form.is_owner)">
@@ -108,12 +133,15 @@
                     </v-radio-group>
                   </v-row>
                 </v-container>
+
               </v-card>
+
               <v-col><br/><br/><br/><br/><br><br/><br/><br/><br/><br>
                 <v-row align="center" justify="left">
                   <p @click="e1 = 21" class="black--text"><v-icon>mdi-arrow-left</v-icon>Sebelumnya</p>
                 </v-row>
               </v-col>
+
             </v-stepper-content>
 
             <v-stepper-content step="23">
@@ -134,8 +162,12 @@
                     </v-card>
                     </v-container>
                   </v-col>
-                </v-row>
-                <v-btn color="#4291F0" @click="e1 = 24" width="165" height="60" class="white--text"><h4>OK, Lanjut!</h4></v-btn>
+                </v-row> 
+                
+                <v-btn color="#4291F0" @click="e1 = 24" width="165" height="60" class="white--text">
+                  <h4>OK, Lanjut!</h4>
+                </v-btn>
+
                 <v-col><br/><br/><br/><br/><br/><br><br/><br/><br/><br/><br>
                   <v-row align="center" justify="left">
                     <p @click="e1 = 22" class="black--text"><v-icon>mdi-arrow-left</v-icon>Sebelumnya</p>
@@ -271,9 +303,12 @@
 
             <v-stepper-content step="29" style="">
               <v-card class="elevation-0">
-                <h1>JEDA</h1><br/><br/>
+                <h1>You are doing great…!</h1><br/><br/>
                 <v-col class="d-flex align-center">
+
                   <v-container>
+
+                   <h4>we need little more information for analyzing your business</h4><br/>
                     <v-btn color="#4291F0" @click="e1 = 210" style="width:350px; height: 52px" class="white--text ml-0 mr-0">Ok, lanjut</v-btn>
                      
                   </v-container>
@@ -413,9 +448,10 @@
 
             <v-stepper-content step="215" style="">
               <v-card class="elevation-0">
-                <h1>JEDA</h1><br/><br/>
+                <h1>You’ve come so far..</h1><br/><br/>
                 <v-col class="d-flex align-center">
                   <v-container>
+                    <h4>Hanging there. Just few questions to go…!</h4><br />
                    <v-btn color="#4291F0" @click="e1 = 216"  style="width:350px; height: 52px" class="white--text ml-0 mr-0">Ok, lanjut</v-btn>
                      
                   </v-container>
@@ -648,6 +684,7 @@ export default {
         business_planning: null,
         growth_and_balance: null,
       },
+      total: 0,
       headerslogo: [
         {
           stage:'Stage 1',
@@ -813,85 +850,117 @@ export default {
           sustainability_and_reward: Number(this.getsustainability_and_reward()),
           business_planning: Number(this.getbusiness_planning()),
           growth_and_balance: Number(this.getgrowth_and_balance()),
+         
         },
-
-       
-
-       
         
-      }).then((result) => {
-        if (Number(result) < 20 ){
-           this.$router.push({ name: 'finalresultthree'}) 
-        }else if (Number(result) >= 20 && Number(result) <= 30){
-           this.$router.push({ name: 'finalresulttwo'})
-        }else if (Number(result) > 30){
-           this.$router.push({ name: 'finalresultone'})
-        }
+       
+
+       
+
+  
+      }).then((response) => {
+        console.log(response)
+
+        this.$router.push({
+          name: 'businessresult',
+          params: {
+            id: Number(this.total)
+          }
+        });
+
+        // if(Number(this.total) >= 40) {
+        //   this.$router.push({ name: 'finalresultone' });
+        //   console.log('masuk');
+        // }  else if(Number(this.total) >= 20 && Number(this.total) < 40) {
+        //   this.$router.push({ name: 'finalresulttwo' });
+        //   console.log('masuk 2');
+        // }else if(Number(this.total) >= 0 && Number(this.total) < 20) {
+        //   this.$router.push({ name: 'finalresultthree' });
+        //   console.log('masuk 3');
+        // }
+        
+      
           
       })
     },
 
     setStateButtonsatu(val) {
       this.form.sistem_dan_proses = val;
+      this.total += Number(val);
       this.setsistem_dan_proses(val);
     },
     setStateButtondua(val) {
       this.form.performa_karyawan = val;
+      this.total += Number(val);
       this.setperforma_karyawan(val);
     },
     setStateButtontiga(val) {
-      this.form.performa_finansial = val;
+      this.form.performa_finansial = val;   
+      this.total += Number(val);
       this.setperforma_finansial(val);
     },
     setStateButtonempat(val) {
       this.form.billing_invoicing_dan_debitur = val;
+       this.total += Number(val);
       this.setbilling_invoicing_dan_debitur(val);
     },
     setStateButtonlima(val) {
+       this.total += Number(val);
       this.form.cash_flow = val;
       this.setcash_flow(val);
     },
     setStateButtonenam(val) {
+       this.total += Number(val);
       this.form.creditor_payment = val;
       this.setcreditor_payment(val);
     },
     setStateButtontujuh(val) {
+     this.total += Number(val);
       this.form.work_in_progress = val;
       this.setwork_in_progress(val);
     },
     setStateButtondelapan(val) {
       this.form.project_management = val;
+      this.total += Number(val);
       this.setproject_management(val);
     },
     setStateButtonsembilan(val) {
+      this.total += Number(val);
       this.form.quality = val;
       this.setquality(val);
     },
     setStateButtonsepuluh(val) {
+      this.total += Number(val);
       this.form.client_servicing = val;
       this.setclient_servicing(val);
     },
     setStateButtonsebelas(val) {
       this.form.organization_and_scheduling = val;
+      this.total += Number(val);
       this.setorganization_and_scheduling(val);
     },
     setStateButtonduabelas(val) {
       this.form.risk_management = val;
+      this.total += Number(val);
       this.setrisk_management(val);
     },
     setStateButtontigabelas(val) {
+       this.total += Number(val);
       this.form.staff_culture = val;
       this.setstaff_culture(val);
     },
     setStateButtonempatbelas(val) {
+      this.total += Number(val);
       this.form.sustainability_and_reward = val;
       this.setsustainability_and_reward(val);
     },
     setStateButtonlimabelas(val) {
+      this.total += Number(val);
       this.form.business_planning = val;
       this.setbusiness_planning(val);
     },
     setStateButtonenambelas(val) {
+       this.total += Number(val);
       this.form.growth_and_balance = val;
       this.setgrowth_and_balance(val);
     }

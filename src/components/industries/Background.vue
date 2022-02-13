@@ -5,7 +5,7 @@
       <v-img class="white--text align-center rounded-0 elevation-0" height="400px" width="100%" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
         <v-container>
         <v-card-title>
-        <h1>Agribisnis</h1>
+        <h1>  </h1>
         </v-card-title>
         <v-card-text class="text-left">
         <p>Egestas urna facilisi</p>

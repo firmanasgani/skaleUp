@@ -22,11 +22,11 @@
             <v-col>
               <v-card class="mx-auto" height="275" width="900" outlined color="transparent" >
                 <v-col class="column_wrapper" height="275" width="900" outlined color="transparent">
-                    <v-list-item v-for="(item, index) in services" :key="index" router :to="item.link">
+                    <v-list-item v-for="(item, index) in services" :key="index" router :to="'/industries'+item.link">
                       <v-list-item-action>
-                      <v-list-item-title @mouseout="setTitleIcon(item.title)" @mouseover="setIconTemp(item.avatar, item.title)">{{ item.title }}</v-list-item-title>
+                        <v-list-item-title  @mouseover="setIconTemp(item.avatar, item.title)">{{ item.title }}</v-list-item-title>
                       </v-list-item-action>
-                      </v-list-item>
+                    </v-list-item>
                 </v-col>
               </v-card>
             </v-col>
@@ -102,72 +102,72 @@ export default {
       {
         avatar: 'agribisnis.png',
         title: "Agribusiness",
-        link: "/industries/agribusiness",
+        link: "/agribusiness",
       },
       {
         avatar: 'manufaktur.png',
         title: "Manufacture",
-        link: "/amrservices",
+        link: "/manufacture",
       },
       {
         avatar: 'consumer-product.png',
         title: "Customer Products",
-        link: "/amrservices",
+        link: "/customer-products",
       },
       {
         avatar: 'finansial.png',
         title: "Financial Services",
-        link: "/mmrservices",
+        link: "/financial-services",
       },
       {
         avatar: 'forestry.png',
         title: 'Forest Product, Paper and Packing',
-        link: "/amrservices",
+        link: "/forest-product-paper-and-packing",
       },
       {
         avatar: 'infras.png',
         title: "Infrastructure And Construction",
-        link: "/amrservices",
+        link: "/infrastructure-and-construction",
       },
       {
         avatar: 'mediaand.png',
         title: "Media And Entertainment",
-        link: "/mmrservices",
+        link: "/media-and-entertainment",
       },
       {
         avatar: 'energymining.png',
         title: "Energy And Mining",
-        link: "/amrservices",
+        link: "/energy-and-mining",
       },
       {
-        avatar: 'sretail.png',
+        avatar: 'retail.png',
         title: "Retail",
-        link: "/amrservices",
+        link: "/retail",
       },
       {
         avatar: 'techinfo.png',
         title: "Technology And Telecomunications",
-        link: "/mmrservices",
+        link: "/technology-and-telecomunications",
       },
       {
         avatar: 'transport.png',
         title: "Transportation And Logistic",
-        link: "/amrservices",
+        link: "/transportation-and-logistic",
       },
       {
         avatar: 'renewable.png',
         title: "Renewable Energy",
-        link: "/amrservices",
+        link: "/renewable-energy",
       },
       {
         avatar: 'chemical.png',
         title: "Chemical Industry",
-        link: "/amrservices",
+        link: "/chemical-industry",
       },
       {
-        avatar: 'industries.png',
+        avatar: 'health.png',
         title: "Health",
-        link: "/amrservices",
+        link: "/health",
       },
     ],
   }),
