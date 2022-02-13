@@ -46,7 +46,7 @@
                 
               </v-card-text>
               <v-card-actions>
-              <router-link :to="'/insight/insightone/'+item.Id">Read more-></router-link> 
+              <a href="'http://192.168.100.16:8080/insight/insightone/'+item.Id">Read more-></a> 
               </v-card-actions>
             </v-card>
           </v-col>

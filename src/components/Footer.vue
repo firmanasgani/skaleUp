@@ -42,7 +42,7 @@ export default {
         url: 'https://www.instagram.com/skaleupwith.us/'
       },{
         icons: 'mdi-facebook',
-        url: 'https://www.facebook.com/skaleup/'
+        url: 'https://www.facebook.com/SkaleUpWithUs'
       },{
         icons: 'mdi-whatsapp',
         url: 'https://wa.me/6281333338630'

@@ -25,12 +25,11 @@
 
       <v-col cols="12" md="8" sm="8" class="hidden-xs-only">
     
-        <VueSlickCarousel v-bind="settigns">
+        <VueSlickCarousel v-bind="settings">
           <v-col v-for="(item, i) in items" :key="i" >
-            <v-card class="pa-md-10 mx-lg-auto overflow-hidden" rounded="xl">
-              <v-img :src="item.images" height="400px" class="mx-auto" ></v-img>
+            <v-card class="pa-sm-5 overflow-hidden" height="250"  >
+              <v-img :src="item.images" style="margin:auto" class="mx-auto"></v-img>
             
-              
             </v-card>
           </v-col>
         </VueSlickCarousel>
@@ -62,7 +61,7 @@
         <VueSlickCarousel v-bind="settigns">
           <v-col v-for="(item, i) in items" :key="i" >
             <v-card class="pa-md-10 mx-lg-auto overflow-hidden" rounded="xl">
-              <v-img :src="item.images" style="width:min-content; height:min-content" class="mx-auto" ></v-img>
+               <v-img :src="item.images" height="50%" width="50%" class="mx-auto" ></v-img>
             
               
             </v-card>
