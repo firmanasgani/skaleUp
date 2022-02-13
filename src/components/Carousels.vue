@@ -19,13 +19,13 @@
                 </router-link>
               </h2>
           
-            </v-card-text><br><br><br><br><br><br><br><br>
+            </v-card-text><br><br><br><br>
             
             <v-container class="hidden-xs-only">
               <v-col class="d-flex align-center">
                 <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 0">
                   <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; background: rgba(0,0,0, 0.5)"><br>
-                    {{ itemSatu }}<br><br><br>
+                    {{ itemSatu }}<br>
                   </router-link><br>
                   
                   <v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
@@ -33,21 +33,21 @@
                 
                 <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 1">
                   <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; background: rgba(0,0,0, 0.5)"><br>
-                    {{ itemDua }}<br><br><br>
+                    {{ itemDua }}<br>
                   </router-link><br>
                   <v-progress-linear v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
                 </v-card>
                 
                 <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 2">
                   <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; background: rgba(0,0,0, 0.5)"><br>
-                    {{ itemTiga }}<br><br><br>
+                    {{ itemTiga }}<br>
                   </router-link><br>
                   <v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
                 </v-card>
                 
                 <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 3">
                   <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; background: rgba(0,0,0, 0.5)"><br>
-                    {{ itemEmpat }}<br><br><br>
+                    {{ itemEmpat }}<br>
                   </router-link><br>
                   <v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
                 </v-card>
