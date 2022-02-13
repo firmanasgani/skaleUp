@@ -26,10 +26,9 @@
       <v-col cols="12" md="8" sm="8" class="hidden-xs-only">
     
         <VueSlickCarousel v-bind="settings">
-          <v-col v-for="(item, i) in items" :key="i" >
-            <v-card class="pa-sm-5 overflow-hidden" height="250"  >
-              <v-img :src="item.images" style="margin:auto" class="mx-auto"></v-img>
-            
+          <v-col v-for="(item, i) in items" :key="i" class="d-flex align-center">
+            <v-card  class="d-flex pa-sm-5 overflow-hidden align-center" height="250" >
+              <v-img :src="item.images"  style="margin:auto; alignItems:center; verticalAlign:center; background-position: left center;" class="mx-auto align-center"></v-img>
             </v-card>
           </v-col>
         </VueSlickCarousel>
