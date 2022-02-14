@@ -32,12 +32,12 @@
                     </v-col>
                       <v-col>
                       <v-card class="d-flex" flat outlined style="border-color: #D2D2D2">
-                      <v-col cols="12" md="8">
+                      <v-col cols="12" md="6" >
                       <p class="font-weight-bold">Resume</p>
                       <p>( 5 MB max in PDF Format)</p>
                       </v-col>
-                      <v-col cols="12" md="4">
-                      <v-btn class="primary--text"  color="#4291F0" :loading="isSelecting" @click="onButtonClick" width="192" height="52" outlined style="border-color: #4291f0">Upload</v-btn>
+                      <v-col cols="12" md="6">
+                      <v-btn class="primary--text"  color="#4291F0" :loading="isSelecting" @click="onButtonClick" width="192" height="48" outlined style="border-color: #4291f0">Upload</v-btn>
                       <input ref="uploader" class="d-none" type="file" accept="image/*" @change="onFileChanged">
                      </v-col>
                      </v-card>
