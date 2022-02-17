@@ -11,32 +11,25 @@
         <v-card class="mx-auto mb-16" outlined color="transparent">
             <a href="/careers" class="text-decoration-none"><v-icon>mdi-arrow-left</v-icon> Go to search</a>
           <v-card-text><br><br>
-            <p class="text-h4 text--primary font-weight-bold">Accounting associate</p>
-            Jakarta, Jakarta Raya Indonesia
+            <p class="text-h4 text--primary font-weight-bold">{{ title }}</p>
+            {{ place }}
             <p class="linecr"></p><br>
-
         <v-row class="d-flex">
             <v-col>
-               <v-card flat>Department<br><p class="text-h6 text--primary font-weight-bold">Finance</p></v-card>
+               <v-card flat>Department<br><p class="text-h6 text--primary font-weight-bold">{{ department }}</p></v-card>
             </v-col>
             <v-col>
-               <v-card flat>Job posted on<br><p class="text-h6 text--primary font-weight-bold">Nov 21, 2021</p></v-card>
+               <v-card flat>Job posted on<br><p class="text-h6 text--primary font-weight-bold">{{ date_posted }}</p></v-card>
             </v-col>
             <v-col>
-               <v-card flat>Employement type<br><p class="text-h6 text--primary font-weight-bold">Permanent</p></v-card>
+               <v-card flat>Employement type<br><p class="text-h6 text--primary font-weight-bold">{{ type }}</p></v-card>
             </v-col>
             <v-col>
-               <v-card flat>Experience range<br><p class="text-h6 text--primary font-weight-bold">2 Years - 4 Years</p></v-card>
+            <v-card flat>Experience range<br><p class="text-h6 text--primary font-weight-bold">{{ exprange }}</p></v-card>
             </v-col>
           </v-row>
 
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit lectus scelerisque ipsum amet. Tristique tristique velit vivamus neque cras egestas. Porttitor varius fermentum, sed eu sit porttitor gravida duis. Auctor integer rhoncus cursus sed. Pharetra consectetur faucibus quam cras eleifend.</div><br>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit lectus scelerisque ipsum amet. Tristique tristique velit vivamus neque cras egestas. Porttitor varius fermentum, sed eu sit porttitor gravida duis. Auctor integer rhoncus cursus sed. Pharetra consectetur faucibus quam cras eleifend.</div><br>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit lectus scelerisque ipsum amet. Tristique tristique velit vivamus neque cras egestas. Porttitor varius fermentum, sed eu sit porttitor gravida duis. Auctor integer rhoncus cursus sed. Pharetra consectetur faucibus quam cras eleifend.</div><br>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit lectus scelerisque ipsum amet. Tristique tristique velit vivamus neque cras egestas. Porttitor varius fermentum, sed eu sit porttitor gravida duis. Auctor integer rhoncus cursus sed. Pharetra consectetur faucibus quam cras eleifend.</div><br>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit lectus scelerisque ipsum amet. Tristique tristique velit vivamus neque cras egestas. Porttitor varius fermentum, sed eu sit porttitor gravida duis. Auctor integer rhoncus cursus sed. Pharetra consectetur faucibus quam cras eleifend.</div><br>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit lectus scelerisque ipsum amet. Tristique tristique velit vivamus neque cras egestas. Porttitor varius fermentum, sed eu sit porttitor gravida duis. Auctor integer rhoncus cursus sed. Pharetra consectetur faucibus quam cras eleifend.</div><br>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit lectus scelerisque ipsum amet. Tristique tristique velit vivamus neque cras egestas. Porttitor varius fermentum, sed eu sit porttitor gravida duis. Auctor integer rhoncus cursus sed. Pharetra consectetur faucibus quam cras eleifend.</div>
+            <div></div>
           </v-card-text>
             <p class="linecrb"></p><br>
             <v-row>
@@ -49,7 +42,7 @@
             </v-btn>
         </v-col>
         <v-col cols="12" md="2" class="white--text align-center" align="center" justify="center" >
-        <router-link to="/Careers/applycareersatu"><v-btn color="#4291F0" width="192" height="52" class="white--text">Apply Now </v-btn></router-link>
+        <router-link :to="'/Careers/applycareersatu/'+id"><v-btn color="#4291F0" width="192" height="52" class="white--text">Apply Now </v-btn></router-link>
         </v-col>
         </v-row>
         </v-card>
@@ -74,17 +67,43 @@ export default {
     Footer,
 },
 
-  data: () => ({
-      icons: [
-      "mdi-facebook",
-      "mdi-linkedin",
-      "mdi-instagram",
-      "mdi-youtube",
-      "mdi-link",
-    ],
-    reveal: false,
-    alignments: ["center"],
-  }),
+  data() {
+    return{
+      icons:  [
+        "mdi-facebook",
+        "mdi-linkedin",
+        "mdi-instagram",
+        "mdi-youtube",
+        "mdi-link",
+      ],
+    
+      reveal: false,
+      alignments: ["center"],
+      id: this.$route.params.id,
+      title: "",
+      department: "",
+      date_posted: "",
+      type: '',
+      exprange: '',
+      detail: '',
+      place:'',
+    }
+     
+  },
+  mounted() {
+    fetch('http://127.0.0.1:8000/career/'+this.id).then(async response => {
+      const data = await response.json();
+
+      this.title = data.data[0].title;
+      this.department =  data.data[0].department;
+      this.date_posted =  data.data[0].date_posted;
+      this.type =  data.data[0].type;
+      this.exprange =  data.data[0].exprange;
+      this.detail =  data.data[0].detail;
+      this.place =  data.data[0].place;
+
+    })
+  },
 };
 </script>
 

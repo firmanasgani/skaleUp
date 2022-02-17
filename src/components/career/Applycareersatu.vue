@@ -9,10 +9,10 @@
           <v-row justify="center" align="center">
             <v-col cols="12" md="6">
               <v-card class="mx-auto mb-16" outlined color="transparent">
-                <a href="/Careers/careersatu" class="text-decoration-none"><v-icon>mdi-arrow-left</v-icon> Back to career detail</a>
+                <a :href="'/Careers/careersatu/'+id" class="text-decoration-none"><v-icon>mdi-arrow-left</v-icon> Back to career detail</a>
                 <v-card-text><br><br>
                 <v-col align="center" justify="center">
-                <p class="text-h4 text--primary font-weight-bold">Apply as Accounting associate</p>
+                <p class="text-h4 text--primary font-weight-bold">Apply as {{ title }}</p>
                 <p class="linecr"></p><br>
                 </v-col>
                 <v-form>
@@ -38,7 +38,7 @@
                       </v-col>
                       <v-col cols="12" md="6">
                       <v-btn class="primary--text"  color="#4291F0" :loading="isSelecting" @click="onButtonClick" width="192" height="48" outlined style="border-color: #4291f0">Upload</v-btn>
-                      <input ref="uploader" class="d-none" type="file" accept="image/*" @change="onFileChanged">
+                      <input ref="uploader" class="d-none" type="file" accept="application/pdf" @change="onFileChanged">
                      </v-col>
                      </v-card>
                      </v-col>
@@ -77,7 +77,7 @@
                 </v-card>
             <v-card-text class="text-center">
               <h1>Application sent!</h1><br>
-             <p>You've completed your application for <br>Accounting Associate at Skale Up</p>
+             <p>You've completed your application for <br>{{ title }}</p>
             </v-card-text>
             <v-card-actions class="justify-end">
               <router-link to="/" style="text-decoration: none; color: inherit;">
@@ -103,33 +103,40 @@
 </template>
 
 <script>
-
 import Header from '../Header';
 import Footer from '../Footer';
-
 export default {
     
     components: {
     Header,
     Footer,
 },
-
-  data: () => ({
-    selectedFile: null,
-    isSelecting: false,
-    rules: [
+  data(){
+    return{
+      id: this.$route.params.id,
+      selectedFile: null,
+      isSelecting: false,
+      rules: [
         value => !value || value.size < 5000000 || 'File size should be less than 5 MB!',
       ],
       icons: [
-      "mdi-facebook",
-      "mdi-linkedin",
-      "mdi-instagram",
-      "mdi-youtube",
-      "mdi-link",
-    ],
-    reveal: false,
-    alignments: ["center"],
-  }),
+        "mdi-facebook",
+        "mdi-linkedin",
+        "mdi-instagram",
+        "mdi-youtube",
+        "mdi-link",
+      ],
+      reveal: false,
+      alignments: ["center"],
+      title: '',
+    }
+  },mounted(){
+    fetch('http://127.0.0.1:8000/career/'+this.id).then(async response => {
+      const data = await response.json();
+      this.title = data.data[0].title;
+    })
+
+  },
   computed: {
     buttonText() {
       return this.selectedFile ? this.selectedFile.name : this.defaultButtonText
@@ -141,7 +148,6 @@ export default {
       window.addEventListener('focus', () => {
         this.isSelecting = false
       }, { once: true })
-
       this.$refs.uploader.click()
     },
     onFileChanged(e) {
@@ -159,11 +165,9 @@ export default {
   position: absolute;
   width: 100%;
 }
-
 .roundedbh {
   border-radius: 25px;
 }
-
 .linecr {
   border-bottom: 5px solid #4291f0;
   width: 10%;

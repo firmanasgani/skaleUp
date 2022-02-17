@@ -22,11 +22,11 @@
           :items-per-page="5"
           class="elevation-1"
           :search="search">
-          <template #item.judul ="{ value }">
-            <v-list-item>
+          <template v-slot:[`item.title`] ="{ item }">
+            <v-list-item >
               <v-list-item-content>
                 <v-list-item-title>
-                  <router-link to="/Careers/careersatu">{{ value }}</router-link>
+                  <router-link :to="'Careers/careersatu/'+item.Id">{{ item.title }}</router-link>
                 </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
@@ -48,91 +48,25 @@
             text: 'Title',
             align: 'start',
             sortable: false,
-            value: 'judul',
+            value: 'title',
           },
-          { text: 'DEPARTEMENT', value: 'departement' },
-          { text: 'JOB POSTED', value: 'tanggal' },
+          { text: 'Department', value: 'department' },
+          { text: 'Job Posted', value: 'date_posted' },
         ],
-        itemitem: [
-          {
-            judul: 'Legal Associate',
-            departement: 'Finance',
-            tanggal: 'Nov 21, 2021',
-         
-          },
-          {
-            judul: 'Procurement Governance & Excellence',
-            departement: 'Finance',
-            tanggal: 'Nov 21, 2021',
-          },
-          {
-            judul: 'Financial Planning & Analysis (Financial Services)',
-            departement: 'Finance',
-            tanggal: 'Nov 21, 2021',
-          },
-          {
-            judul: 'Risk Control & Audit Associate',
-            departement: 'Finance',
-            tanggal: 'Nov 21, 2021',
-          },
-          {
-            judul: 'Accounting Associate',
-            departement: 'Finance',
-            tanggal: 'Nov 21, 2021',
-          },
-          {
-            judul: 'Legal Associate',
-            departement: 'Finance',
-            tanggal: 'Nov 21, 2021',
-         
-          },
-          {
-            judul: 'Procurement Governance & Excellence',
-            departement: 'Finance',
-            tanggal: 'Nov 21, 2021',
-          },
-          {
-            judul: 'Financial Planning & Analysis (Financial Services)',
-            departement: 'Finance',
-            tanggal: 'Nov 21, 2021',
-          },
-          {
-            judul: 'Risk Control & Audit Associate',
-            departement: 'Finance',
-            tanggal: 'Nov 21, 2021',
-          },
-          {
-            judul: 'Accounting Associate',
-            departement: 'Finance',
-            tanggal: 'Nov 21, 2021',
-          },
-          {
-            judul: 'Jelly bean',
-            departement: 0.0,
-            tanggal: 94,
-          },
-          {
-            judul: 'Lollipop',
-            departement: 0.2,
-            tanggal: 98,
-          },
-          {
-            judul: 'Honeycomb',
-            departement: 3.2,
-            tanggal: 87,
-          },
-          {
-            judul: 'Donut',
-            departement: 25.0,
-            tanggal: 51,
-          },
-          {
-            judul: 'KitKat',
-            departement: 26.0,
-            tanggal: 65,
-          },
-        ],
+        itemitem: [],
+      }
+    },methods:{
+      todetail(id){
+        this.$router.push({ name: 'Applycareersatu', params: {id: id}})
       }
     },
+    mounted(){
+      fetch('http://127.0.0.1:8000/getCareers').then(
+        async response => {
+          const data = await response.json();
+          this.itemitem = data.data;
+        }
+      )
+    }
   }
 </script>

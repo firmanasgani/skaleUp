@@ -209,12 +209,12 @@ export default [
         name: 'careers'
     },
     {
-        path: '/Careers/careersatu',
+        path: '/Careers/careersatu/:id',
         component:Careersatu,
         name: 'careerssatu'
     },
     {
-        path: '/Careers/applycareersatu',
+        path: '/Careers/applycareersatu/:id',
         component:Applycareersatu,
         name: 'applycareerssatu'
     },
