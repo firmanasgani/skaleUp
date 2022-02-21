@@ -61,7 +61,7 @@
       }
     },
     mounted(){
-      fetch('http://127.0.0.1:8000/getCareers').then(
+      fetch('admin.skaleupbusiness.com/getCareers').then(
         async response => {
           const data = await response.json();
           this.itemitem = data.data;

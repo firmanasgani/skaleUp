@@ -131,7 +131,7 @@ export default {
       title: '',
     }
   },mounted(){
-    fetch('http://127.0.0.1:8000/career/'+this.id).then(async response => {
+    fetch('https://admin.skaleupbusiness.com/career/'+this.id).then(async response => {
       const data = await response.json();
       this.title = data.data[0].title;
     })
