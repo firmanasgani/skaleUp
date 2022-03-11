@@ -11,7 +11,7 @@
             <v-col class="text-center">
               <v-card flat>
                 
-                <v-img class="white--text align-center rounded-0 elevation-0" height="400px" width="100%" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
+                <v-img class="white--text align-center rounded-0 elevation-0" height="400px" width="100%" src="../../assets/banner/agribisnis.jpg">
                   <v-container>
                     <v-card-title>
                       <h1> Agribusiness </h1>
@@ -48,8 +48,10 @@
                       <p class="lineh"></p>
                     </v-row>
 
-                    <v-row align="center" justify="center" width="10%" height="10%">
-                        <v-img class="align-end rounded" style="width:1; height:1" :src=" require('@/assets/partner/swasembada.png')"></v-img>
+                    <v-row align="center" justify="center">
+                        <v-card class="pa-md-10 overflow-hidden" rounded="m">
+                          <v-img  :src=" require('@/assets/partner/swasembada.png')" class="mx-auto" ></v-img>
+                        </v-card>
                     </v-row>
                     
                     <v-row align="center" justify="center">

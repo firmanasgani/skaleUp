@@ -19,29 +19,37 @@
 </template>
 <script>
 
+
 export default {
+
   data: () => ({
     reveal: false,
     alignments: ["center"],
     icons: [
-       {
-        icons: 'mdi-linkedin',
-        url: 'https://www.linkedin.com/company/skale-up-business/'
-      },{
-        icons: 'mdi-instagram',
-        url: 'https://www.instagram.com/skaleupwith.us/'
-      },{
+     {
         icons: 'mdi-facebook',
-        url: 'https://www.facebook.com/skaleup/'
+        url: 'https://www.facebook.com/share.php?'+'u='+document.URL
       },{
         icons: 'mdi-whatsapp',
-        url: 'https://wa.me/6281333338630'
+        url: 'https://wa.me/6281333338630'+'?text='+document.URL
       },{
-        icons: 'mdi-youtube',
-        url: 'https://www.youtube.com/channel/UCMRmAlX0XT3ca9YgJQNK-Yw'
+        icons: 'mdi-twitter',
+        url: 'https://twitter.com/intent/tweet?url='+document.URL
       }
     ],
   }),
+  methods: {
+   copylink() {
+     var dummy = document.createElement('input'),
+    text = document.URL;
+
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+    }
+  },
 };
 </script>
 

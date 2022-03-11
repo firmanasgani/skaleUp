@@ -14,7 +14,7 @@
       </v-col>
     </v-row>
     <v-row align="center" justify="center" class="mb-16 mt-16">
-      <v-btn class="primary--text" color="#4291F0" @click="e1 = 26" width="192" height="52" outlined style="border-color: #4291f0; margin-top: 30px">Load More</v-btn>
+      <!-- <v-btn class="primary--text" color="#4291F0" @click="e1 = 26" width="192" height="52" outlined style="border-color: #4291f0; margin-top: 30px">Load More</v-btn> -->
     </v-row>
   </v-container>
 </template>

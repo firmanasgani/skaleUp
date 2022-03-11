@@ -25,7 +25,7 @@
                 <h2 class="font-weight-bold display-3">Great! <br>Your Business is Ready for Scalling UP!</h2><br>
                 <h4 class="display-1">Bisnis anda memiliki kondisi kesehatan yang sangat bagus saat ini dan beberapa tahun mendatang. Ini saat yang tepat Anda mempertimbangkan strategi peluang pertumbuhan bisnis untuk meningkatkan kesuksesan jangka panjang.</h4><br><br><br>
                 <router-link to="/businesshealth/finalresulttwo">
-                <v-btn color="#4291F0" width="400" height="60" class="elevation-3 white--text">Scale up bisnis saya sekarang</v-btn>
+                <v-btn color="#4291F0" width="400" height="60"  href="mailto:halo@skaleupbusiness.com?subject=Scale up Bisnis Saya Sekarang"  class="elevation-3 white--text">Scale up bisnis saya sekarang</v-btn>
                 </router-link>
               </v-card>
             </v-col>

@@ -20,15 +20,15 @@
                     <v-row>
                     <v-col cols="12" sm="12">
                     <p class="font-weight-bold">Full Name</p>
-                    <v-text-field v-model="first" outlined style="width: 100%" ></v-text-field>
+                    <v-text-field :rules="nameRules" v-model="form.fullname" outlined style="width: 100%" :value="form.fullname" ></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6">
                     <p class="font-weight-bold">Email</p>
-                    <v-text-field v-model="first" label="Email" outlined></v-text-field>
+                    <v-text-field :rules="emailRules" v-model="form.email" label="Email" outlined></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6">
                     <p class="font-weight-bold">Contact Number</p>
-                    <v-text-field v-model="last" label="e.g. +62 1234567890" outlined></v-text-field>
+                    <v-text-field v-model="form.nohp" label="e.g. +62 1234567890" outlined></v-text-field>
                     </v-col>
                       <v-col>
                       <v-card class="d-flex" flat outlined style="border-color: #D2D2D2">
@@ -38,7 +38,8 @@
                       </v-col>
                       <v-col cols="12" md="6">
                       <v-btn class="primary--text"  color="#4291F0" :loading="isSelecting" @click="onButtonClick" width="192" height="48" outlined style="border-color: #4291f0">Upload</v-btn>
-                      <input ref="uploader" class="d-none" type="file" accept="application/pdf" @change="onFileChanged">
+                      <input ref="uploader"  class="d-none" type="file" accept="application/pdf" @change="onFileChanged">
+                      {{ selectedFile.name }}
                      </v-col>
                      </v-card>
                      </v-col>
@@ -50,7 +51,7 @@
             <v-row>
             <v-col cols="12" md="8">
             <p class="primary--text">Share this vacancy:</p>
-            <v-btn  v-for="icon in icons" :key="icon" class="mx-1" primary icon color="#4291F0" width="36" height="36" outlined style="border-color: #4291f0">
+            <v-btn  v-for="icon in icons" :key="icon" class="mx-1" primary icon color="#4291F0" width="36" height="36" outlined style="border-color: #4291f0" >
               <v-icon size="25px">
                 {{ icon }}
               </v-icon>
@@ -105,6 +106,7 @@
 <script>
 import Header from '../Header';
 import Footer from '../Footer';
+import axios from 'axios';
 export default {
     
     components: {
@@ -114,24 +116,35 @@ export default {
   data(){
     return{
       id: this.$route.params.id,
-      selectedFile: null,
+      selectedFile: '',
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => v.length <= 255 || 'Name must be less than 10 characters'
+      ],
+      emailRules: [ 
+        v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+      ],
       isSelecting: false,
       rules: [
         value => !value || value.size < 5000000 || 'File size should be less than 5 MB!',
       ],
       icons: [
         "mdi-facebook",
-        "mdi-linkedin",
-        "mdi-instagram",
-        "mdi-youtube",
+        "mdi-twitter",
         "mdi-link",
       ],
       reveal: false,
       alignments: ["center"],
       title: '',
+      form: {
+        fullname: '',
+        email: '',
+        nohp: '',
+        resume: '',
+      },
     }
   },mounted(){
-    fetch('https://admin.skaleupbusiness.com/career/'+this.id).then(async response => {
+    fetch('https://admin.skaleupbusiness.com/getDetail/'+this.id).then(async response => {
       const data = await response.json();
       this.title = data.data[0].title;
     })
@@ -147,14 +160,31 @@ export default {
       this.isSelecting = true
       window.addEventListener('focus', () => {
         this.isSelecting = false
+        console.log(this.form.fullname)
+        console.log(this.form.email)
+        console.log(this.form.nohp)
+        console.log(this.form.resume)
+        console.log(Event.target.files[0].name);
+        axios.post('https://admin.skaleupbusiness.com/appy-careers', this.form).then(response => 
+        {
+          this.form.fullname = response.data;
+          this.form.email = '';
+          this.form.nohp = '';
+          this.form.resume = '';
+          this.reveal = true;
+        });
       }, { once: true })
       this.$refs.uploader.click()
     },
     onFileChanged(e) {
       this.selectedFile = e.target.files[0]
-      
+
       // do something
-    }}
+    },
+   
+  }
+
+
 };
 </script>
 

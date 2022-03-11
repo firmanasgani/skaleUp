@@ -7,14 +7,14 @@
         <v-row class="d-flex align-center mb-0 white--text" align="center" justify="center" no-gutters style="height: 800px">
           <v-col>
             <v-card-text>
-              <h3 style="-webkit-text-stroke: 1px black; width: 6rem">{{ item.datePosted }}</h3><br>
+              <h3>{{ item.datePosted }}</h3><br>
               
-              <p class="text-h2 font-weight-bold" style="-webkit-text-stroke: 3px black; width:fit-content">{{ item.title }}
+              <p class="text-h2 font-weight-bold">{{ item.title }}
               </p><br>
               
               <h2 class="alignleft">
               
-                <router-link :to="'/insights/insightone/'+item.Id" style="text-decoration: none; color: inherit;-webkit-text-stroke: 1px black; width:20px"><br>
+                <router-link :to="'/insights/insightone/'+item.Id"><br>
                     Learn More->
                 </router-link>
               </h2>
@@ -24,7 +24,7 @@
             <v-container class="hidden-xs-only">
               <v-col class="d-flex align-center">
                 <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 0">
-                  <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; background: rgba(0,0,0, 0.5)"><br>
+                  <router-link to="" class="white--text body-2" ><br>
                     {{ itemSatu }}<br>
                   </router-link><br>
                   
@@ -32,21 +32,21 @@
                 </v-card>
                 
                 <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 1">
-                  <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; background: rgba(0,0,0, 0.5)"><br>
+                  <router-link to="" class="white--text body-2" ><br>
                     {{ itemDua }}<br>
                   </router-link><br>
                   <v-progress-linear v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
                 </v-card>
                 
                 <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 2">
-                  <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; background: rgba(0,0,0, 0.5)"><br>
+                  <router-link to="" class="white--text body-2" ><br>
                     {{ itemTiga }}<br>
                   </router-link><br>
                   <v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>
                 </v-card>
                 
                 <v-card class="transparent mx-auto elevation-0" width="250" height="100" @click="currentIndex = 3">
-                  <router-link to="" class="white--text body-2" style="text-decoration: none; color: inherit; background: rgba(0,0,0, 0.5)"><br>
+                  <router-link to="" class="white--text body-2" ><br>
                     {{ itemEmpat }}<br>
                   </router-link><br>
                   <v-progress-linear v-model="value" :buffer-value="bufferValue" color="#4291F0" height="6"></v-progress-linear>

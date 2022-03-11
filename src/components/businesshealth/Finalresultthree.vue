@@ -27,7 +27,7 @@
                 Opsi yang dapat dipertimbangakan berdasarkan hasil peninjauan tersebut dapat berupa restrukturisasi, kemungkinan pennjulan atau divestasi dan lainnya. Anda tidak tidak perlu khawatir harus memecahkan masalah-masalah tersebut sendiri.
                 Sebaiknya segera hubungi konsultan manajemen bisnis untuk mencari tahu akar permasalahan dan menyelesaikannya.</h4><br><br><br>
                 <router-link to="/">
-                <v-btn color="#4291F0" width="400" height="60" class="elevation-3 white--text">Scale up bisnis saya sekarang</v-btn>
+                <v-btn color="#4291F0" width="400" height="60" href="mailto:halo@skaleupbusiness.com?subject=Scale up Bisnis Saya Sekarang" class="elevation-3 white--text">Scale up bisnis saya sekarang</v-btn>
                 </router-link>
               </v-card>
             </v-col>

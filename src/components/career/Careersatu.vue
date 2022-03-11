@@ -71,9 +71,7 @@ export default {
     return{
       icons:  [
         "mdi-facebook",
-        "mdi-linkedin",
-        "mdi-instagram",
-        "mdi-youtube",
+        "mdi-twitter",
         "mdi-link",
       ],
     
@@ -91,7 +89,7 @@ export default {
      
   },
   mounted() {
-    fetch('https://admin.skaleupbusiness.com/career/'+this.id).then(async response => {
+    fetch('https://admin.skaleupbusiness.com/getDetail/'+this.id).then(async response => {
       const data = await response.json();
 
       this.title = data.data[0].title;

@@ -100,7 +100,7 @@ export default {
     titleIcon: '',
     services: [
       {
-        avatar: 'agribisnis.png',
+        avatar: 'Picture1.png',
         title: "Agribusiness",
         link: "/agribusiness",
       },
@@ -110,7 +110,7 @@ export default {
         link: "/manufacture",
       },
       {
-        avatar: 'consumer-product.png',
+        avatar: 'Picture2.png',
         title: "Customer Products",
         link: "/customer-products",
       },
@@ -155,7 +155,7 @@ export default {
         link: "/transportation-and-logistic",
       },
       {
-        avatar: 'renewable.png',
+        avatar: 'Picture3.png',
         title: "Renewable Energy",
         link: "/renewable-energy",
       },

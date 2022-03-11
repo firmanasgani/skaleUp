@@ -61,10 +61,11 @@
       }
     },
     mounted(){
-      fetch('admin.skaleupbusiness.com/getCareers').then(
+      fetch('https://admin.skaleupbusiness.com/getCareers').then(
         async response => {
           const data = await response.json();
           this.itemitem = data.data;
+          console.log(this.itemitem)
         }
       )
     }

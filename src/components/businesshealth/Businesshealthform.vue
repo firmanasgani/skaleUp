@@ -53,7 +53,7 @@
             <!-- Form nama -->
             <v-stepper-items class="fill-height white--text align-center pa-md-16 mx-lg-16" align="center"  justify="center" style="height: 100%">
               <v-stepper-content step="1">
-                <v-card>
+                <v-card> 
                   <h1>Tuliskan Nama Anda</h1><br/>
                   <h2>Biar akrab, Kami sangat senang berkenalan terlebih dahulu</h2><br/><br/>
                   <v-text-field :rules="nameRules" v-model="form.name" label="Nama Lengkap Anda" solo :value="this.setname(form.name)"></v-text-field><br/>

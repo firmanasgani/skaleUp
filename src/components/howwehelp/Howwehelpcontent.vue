@@ -39,6 +39,11 @@
               </v-card>
             </v-col>
           </v-row> 
+           <v-row align="center" justify="center">
+                    <h1>How We Work</h1>
+                    <v-img  :src=" require('@/assets/hwh.jpg')" class="mx-auto" ></v-img>
+                        
+              </v-row>
         </v-container>
         
       </v-col>

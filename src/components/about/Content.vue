@@ -5,7 +5,19 @@
         <v-col class="text-left">
           <v-card class="mx-auto rounded-0 mb-16 mt-16" width="65%" height="50%" flat>
             <v-card-text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit lectus scelerisque ipsum amet. Tristique tristique velit vivamus neque cras egestas. Porttitor varius fermentum, sed eu sit porttitor gravida duis. Auctor integer rhoncus cursus sed. Pharetra consectetur faucibus quam cras eleifend.<br><br>
+              <p style="text-align: justify">
+                We Are The one stop solution of business consultant in fast-forwarding Small Medium Enterprises (SMEs). We disrupt your business in escalating your operational productivity and team performances. Get ready for scaling up your business forward
+              </p>
+              <p style="text-align: justify">
+                We experience in digital transformation, management system and performance monitoring in any aspects of business, such as: finance and accounting, supply chain management, human resources and operational production.
+
+              </p>
+               <p style="text-align: justify">
+                We affiliate with many experts who have experience in various business sectors for years. Our affiliation has helped and developed many Small Medium Enterprises (SMEs) as client in leveraging their strength and tackling the bottleneck. 
+
+
+              </p>
+
               
                
             </v-card-text>

@@ -94,6 +94,8 @@ export default {
        
 
       });
+  }, methods:{
+  
   }
 };
 </script>
